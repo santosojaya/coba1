@@ -1,5 +1,5 @@
 // Isi URL Web App Apps Script setelah deployment.
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjLljKf1gFnLh_J5irM-nUcCd5dtC7NrM7eEzYPF4FBgE8UYGl4SJkT5oNVKyXfpIKJQ/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvrtimdOA_qd_hnhwzhikRS88BdN2jD7wYBE3PolkDQSKIr3jtVlgwzmRDMor5kw88BQ/exec";
 const $ = (id) => document.getElementById(id);
 let selectedFile = null;
 let capturedAt = null;
