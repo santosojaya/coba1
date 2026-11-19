@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10251f"><title>Himego Production Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><div class="brand-mark">HP</div><div><p class="eyebrow">PRODUCTION ASSISTANT</p><h1>Himego <span>AI Input</span></h1></div></div><span class="status"><i></i> Prototype</span></header>
+    <section class="intro"><p class="eyebrow">SORTING WORKFLOW</p><h2>Ubah form produksi menjadi data spreadsheet.</h2><p>Unggah atau foto form Sortir 1. AI akan membaca setiap supplier dan grade, lalu kamu bisa memeriksa hasilnya sebelum disimpan.</p></section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">LANGKAH 01</p><h3>Pilih form produksi</h3></div><span class="tag">HIMEGO / SORTIR 1</span></div>
+      <label class="upload" for="photoInput"><div class="upload-icon">＋</div><strong>Pilih foto atau ambil gambar</strong><span>JPG, PNG, atau WEBP · foto tabel harus terlihat jelas</span><input id="photoInput" type="file" accept="image/*" capture="environment"></label>
+      <div class="preview-wrap" id="previewWrap" hidden><img id="preview" alt="Pratinjau form"><button class="text-button" id="removePhoto" type="button">Hapus foto</button></div>
+      <div class="actions"><button class="button primary" id="analyzeBtn" disabled>✦ Analisis dengan AI</button><span class="hint" id="fileInfo">Belum ada foto dipilih</span></div>
+      <div class="notice" id="notice" role="status">Website ini masih prototipe. Hubungkan URL Apps Script setelah backend dipasang.</div>
+    </section>
+    <section class="panel" id="resultsPanel" hidden>
+      <div class="section-head"><div><p class="eyebrow">LANGKAH 02</p><h3>Periksa hasil pembacaan</h3></div><span class="tag" id="rowCount">0 BARIS</span></div>
+      <p class="subtext">Periksa nama supplier, tanggal ikan, grade, dan angka. Susut dihitung otomatis: BLS − SDS − seluruh lokalan.</p>
+      <div class="table-scroll"><table><thead><tr><th>Supplier</th><th>Tgl ikan</th><th>Grade</th><th>BLS</th><th>SDS</th><th>Jamur</th><th>Broken</th><th>Debu</th><th>Glagah</th><th>Bilis</th><th>Susut</th><th>Keterangan</th><th>Benda asing</th></tr></thead><tbody id="dataRows"></tbody></table></div>
+      <div class="actions"><button class="button secondary" id="addRowBtn" type="button">＋ Tambah baris</button><button class="button primary" id="saveBtn" type="button">Simpan ke Google Sheets</button></div>
+    </section>
+    <footer>Himego Production Assistant <span>•</span> Data harus diperiksa sebelum disimpan.</footer>
+  </main>
+  <script src="app.js"></script>
+</body></html>
